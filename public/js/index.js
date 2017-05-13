@@ -17,8 +17,12 @@ _V_("heroVideo").ready(function(){
 	$(".vjs-controls").hide();
 	//var videoid =document.getElementsByClassName("vjs-controls");
   //videoid[0].style.setProperty("display", "none", "important");
+  var aspectRatio = 1;
 
-	var aspectRatio = 1080/1920; 
+	if($("#heroVideo").width()<780)
+		aspectRatio = 1080/1920; 
+	else
+		aspectRatio = 320/568; 
 
 	function resizeVideoJS(){
 		var width = document.getElementById(myPlayer.id).parentElement.offsetWidth;

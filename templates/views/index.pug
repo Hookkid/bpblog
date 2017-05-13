@@ -3,7 +3,7 @@ extends ../layouts/default
 block content
 	.videoContainer
 		video.video-js.vjs-default-skin(id="heroVideo",controls,preload="none",autoplay="true",muted)
-			source(src="http://www.qualidadenutricao.com.br/TRAVEL-LOVE.mp4",type='video/mp4')
+			source(src="http://www.qualidadenutricao.com.br/TRAVEL-LOVE.mp4",poster="/images/videoPoster.jpg",type='video/mp4')
 	.playButton(id="playButton")
 		.buttonHolder
 			svg.svgButton(version="1.1",id="Layer_1",xmlns="http://www.w3.org/2000/svg",xmlns:xlink="http://www.w3.org/1999/xlink",x="0px",y="0px",viewBox="0 0 35.4 35.4",enable-background="new 0 0 35.4 35.4",xml:space="preserve")
