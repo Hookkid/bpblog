@@ -13,7 +13,11 @@ $(document).ready(function (){
 _V_("heroVideo").ready(function(){
 	var firstTime = true;
 	var myPlayer = this; 
-	myPlayer.controls = false;
+
+	$(".vjs-controls").hide();
+	//var videoid =document.getElementsByClassName("vjs-controls");
+  //videoid[0].style.setProperty("display", "none", "important");
+
 	var aspectRatio = 1080/1920; 
 
 	function resizeVideoJS(){
@@ -30,6 +34,7 @@ _V_("heroVideo").ready(function(){
 	  	  // Animation complete.
 		});
 		
+		$(".vjs-controls").fadeIn();
 
 		$(".row.article").animate({
 	    marginTop: "+=500",
@@ -50,6 +55,7 @@ _V_("heroVideo").ready(function(){
 	});
 
 	$("#closeButton").click(function() {
+		$(".vjs-controls").fadeOut();
 		$("#closeButton").fadeOut();
 		$("#header").animate({
 	    top: "+=50",
