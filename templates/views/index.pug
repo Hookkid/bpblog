@@ -1,0 +1,51 @@
+extends ../layouts/default
+
+block content
+	.videoContainer
+		video.video-js.vjs-default-skin(id="heroVideo",controls,preload="none",autoplay="true",muted)
+			source(src="/videos/TRAVEL-LOVE.mp4",type='video/mp4')
+	.playButton(id="playButton")
+		.buttonHolder
+			svg.svgButton(version="1.1",id="Layer_1",xmlns="http://www.w3.org/2000/svg",xmlns:xlink="http://www.w3.org/1999/xlink",x="0px",y="0px",viewBox="0 0 35.4 35.4",enable-background="new 0 0 35.4 35.4",xml:space="preserve")
+				path(d="M0,0l35.4,18.7L0,35.4V0z")
+	.closeButton(id="closeButton")
+		svg.svgButton(viewBox="0 0 40 40")
+			line(x1="0",y1="0",x2="40",y2="40")
+			line(x1="0",y1="40",x2="40",y2="0")
+
+	.row.article
+		.col-md-8.leftCol
+			.hugeName
+				.positionName
+					h1 BRUNO<br>PORTELA
+					h3 I am a software developer, travel enthusiast and a little weird
+			.articleCopy
+				p West Point's role in our nation's history dates back to the Revolutionary War, when both sides realized the strategic importance of the commanding plateau on he est bank of the Hudson River. General George Washington considered West Point to be the most important strategic position in America. Washington personally selected Thaddeus Kosciuszko, one of the heroes of Saratoga, to design the fortifications for West Point in 1778, and Washington transferred his headquarters to West Point in 1779. Continental soldiers built forts, batteries and redoubts and extended a 150-ton iron chain across the Hudson to control river traffic. Fortress West Point was never captured by the British, despite Benedict Arnold's treason. West Point is the oldest continuously occupied military post in America.
+				p Several soldiers and legislators, including Washington, Knox, Hamilton and John Adams, desiring to eliminate America's wartime reliance on foreign engineers and artillerists, urged the creation of an institution devoted to the arts and sciences of warfare.
+				.quote
+					span "In World War I, Academy graduates again distinguished themselves on the battlefield."
+				p President Thomas Jefferson signed legislation establishing the United States Military Academy in 1802. He took this action after ensuring that those attending the Academy would be representative of a democratic society
+				p Colonel Sylvanus Thayer, the "father of the Military Academy," served as Superintendent from 18l7-1833. He upgraded academic standards, instilled military discipline and emphasized honorable conduct. Aware of our young nation's need for engineers, Thayer made civil engineering the foundation of the curriculum. For the first half century, USMA graduates were largely responsible for the construction of the bulk of the nation's initial railway lines, bridges, harbors and roads.
+				p After gaining experience and national recognition during the Mexican and Indian wars, West Point graduates dominated the highest ranks on both sides during the Civil War. Academy graduates, headed by generals such as Grant, Lee, Sherman and Jackson, set high standards of military leadership for both the North and South.
+				p The development of other technical schools in the post-Civil War period allowed West Point to broaden its curriculum beyond a strict civil engineering focus. Following the creation of Army post-graduate command and staff schools, the Military Academy came to be viewed as the first step in a continuing Army education.
+				p In World War I, Academy graduates again distinguished themselves on the battlefield. After the war, Superintendent Douglas MacArthur sought to diversify the academic curriculum. In recognition of the intense physical demands of modern warfare, MacArthur pushed for major changes in the physical fitness and intramural athletic programs. "Every cadet an athlete" became an important goal. Additionally, the cadet management of the Honor System, long an unofficial tradition, was formalized with the creation of the Cadet Honor Committee.
+				.text-center
+					img(src='/images/WDF_702268.gif')
+					p.caption Caption of a completly relevant shaking burger
+				p Eisenhower, MacArthur, Bradley, Arnold, Clark, Patton, Stilwell and Wainwright were among an impressive array of Academy graduates who met the challenge of leadership in the Second World War. The postwar period again saw sweeping revisions to the West Point curriculum resulting from the dramatic developments in science and technology, the increasing need to understand other cultures and the rising level of general education in the Army.
+				p In 1964, President Johnson signed legislation increasing the strength of the Corps of Cadets from 2,529 to 4,417 (more recently reduced to 4,000). To keep up with the growth of the Corps, a major expansion of facilities began shortly thereafter.
+				p Another significant development at West Point came when enrollment was opened to women in 1976. Sixty-two women graduated in the class of 1980, to include Andrea Hollen, Rhodes Scholar. Just as women are a vital and integral part of the U.S. Army, so they are at West Point.
+				p In recent decades, the Academy's curricular structure was markedly changed to permit cadets to major in any one of more than a dozen fields, including a wide range of subjects from the sciences to the humanities.
+		.col-md-4.rightCol
+			h1 Know More
+			.wrapper
+				p I've just been to
+				a Point Place, Winsconsin, USA
+				p I'm now headed to
+				a Los Angeles, California, USA
+				hr
+				h2 Sign up to the newsletter
+				p Every other week I send an inspirational letter filled with insights in love, life and travel tips!			
+				input.form-control(type="text",placeholder="your@email.com")
+				input.btn(type="button" value="Submit")
+				hr
