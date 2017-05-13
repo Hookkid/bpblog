@@ -13,6 +13,7 @@ $(document).ready(function (){
 _V_("heroVideo").ready(function(){
 	var firstTime = true;
 	var myPlayer = this; 
+	myPlayer.controls = false;
 	var aspectRatio = 1080/1920; 
 
 	function resizeVideoJS(){
