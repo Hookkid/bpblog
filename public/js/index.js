@@ -1,4 +1,4 @@
-$(document).ready(function (){
+/*$(document).ready(function (){
 	$(window).scroll(function (event) {
 		var y = $(this).scrollTop(); //set position from top when to change style in pixels
 		if (y >= 400) {
@@ -78,3 +78,4 @@ _V_("heroVideo").ready(function(){
 
 });
 
+*/
