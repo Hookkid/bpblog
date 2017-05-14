@@ -1,10 +1,13 @@
 $(document).ready(function (){
 	$(window).scroll(function (event) {
 		var y = $(this).scrollTop(); //set position from top when to change style in pixels
-		if (y >= 400) {
+		if (y >= 550) {
 			$('.navbar').addClass('resized');
+			$(".navbarName").fadeIn();
 		} else {
 			$('.navbar').removeClass('resized');
+			$(".navbarName").fadeOut();
+			
 		}
 	});
 });
@@ -17,14 +20,11 @@ var myPlayer;
 
 
 		if(($(document).width()>1028)){
-			console.log(">");
 			aspectRatio = 1080/1920; 
 			width = document.getElementById(myPlayer.id).parentElement.offsetWidth;
 			height = width * aspectRatio;
 		}
 		else{
-			console.log("<");
-			aspectRatio = 1080/1920; 
 			width =1000;
 			height = 570;
 		}

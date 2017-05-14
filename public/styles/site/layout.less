@@ -16,7 +16,7 @@
 }
 
 #body .row{
-	background-color: #ff5252 !important;
+	//background-color: #ff5252 !important;
 	margin-top: 60vh;
 }
 
@@ -81,6 +81,9 @@
 
 
 @media (max-width: 1230px) {
+	.namePlate{
+		font-size: 3rem !important;
+	}
 	.positionName h1{
 		color: #0b0b0b !important;
 		font-size: 10rem !important;
@@ -111,8 +114,17 @@
 	}
 }
 
-
+@media (min-width: 1200px){
+.container {
+    width: 85%;
+}
+}
 @media (min-width: 960px) {
+	.leftCol{
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+
   .headerContainer {
     //height: calc(92vh - 125px) !important;
   }
@@ -124,7 +136,7 @@
     position: absolute;
     z-index: 5;
     top:-14rem;
-    left: 80px;
+    left: 15px;
 }
 
 .positionName{
@@ -139,8 +151,8 @@
 	background-color: #fff;
 	height: 100%;
 	padding-top: 180px;
-	padding-left: 180px;
-	padding-right: 180px;
+	padding-left: 80px;
+    padding-right: 80px;
 }
 
 .rightCol{
@@ -198,13 +210,17 @@
 	position: absolute;
 	top: 5%;
     left: 95%;
-	transform: translate3d(-50%,-50%,0);
 	width: 50px;
 	height: 50px;
 	color: hsla(0,0%,100%,.3);
 	z-index: 10;
 	cursor: pointer;
-	transition: .2s ease-out;
+	transition: transform .6s ease-out;
+}
+
+.closeButton:hover{
+	transform: rotate(180deg);
+	border: solid rgba(255, 255, 255, 0.5) 4px;
 }
 .playButton{
 	position: absolute;
@@ -272,8 +288,46 @@ svg line{
 	height: 80px !important;
 	color: #0b0b0b;
 	background-color: #fff;
+	padding-top: 10px;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+
+.resized .socialIcons i{
+	font-size: 5rem;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.resized .nav a{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.resized .namePlate{
+	font-family: 'Teko', sans-serif;	
+	font-size: 5rem;
+	color: #0b0b0b;
+
+}
+ .resized .namePlate, .resized .navbarSignup{
+	display: block;
+}
+.navbarSignup, .namePlate{
+	display: none;
+	margin-left: 10px;
+	float: right;
+}
+
+.navbarSignup{
+	
+	margin-top: 15px;
 }
