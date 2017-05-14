@@ -9,25 +9,42 @@ $(document).ready(function (){
 	});
 });
 
+var myPlayer;
+
+	function resizeVideoJS(){
+
+		var aspectRatio,width,height;
+
+
+		if(($(document).width()>1028)){
+			console.log(">");
+			aspectRatio = 1080/1920; 
+			width = document.getElementById(myPlayer.id).parentElement.offsetWidth;
+			height = width * aspectRatio;
+		}
+		else{
+			console.log("<");
+			aspectRatio = 1080/1920; 
+			width =1000;
+			height = 570;
+		}
+		myPlayer.width(width).height(height);
+
+	}
+
+
  // Once the video is ready
 _V_("heroVideo").ready(function(){
 	var firstTime = true;
-	var myPlayer = this; 
+	myPlayer = this; 
 
 	$(".vjs-controls").hide();
 	//var videoid =document.getElementsByClassName("vjs-controls");
   //videoid[0].style.setProperty("display", "none", "important");
-  var aspectRatio = 1;
 
-	if($("#heroVideo").width()<780)
-		aspectRatio = 1080/1920; 
-	else
-		aspectRatio = 320/568; 
 
-	function resizeVideoJS(){
-		var width = document.getElementById(myPlayer.id).parentElement.offsetWidth;
-		myPlayer.width(width).height( width * aspectRatio );
-	}
+
+
 
 	$("#playButton").click(function() {		
 		$("#closeButton").fadeIn();
