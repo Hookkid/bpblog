@@ -1,7 +1,7 @@
 $(document).ready(function (){
 	$(window).scroll(function (event) {
 		var y = $(this).scrollTop(); //set position from top when to change style in pixels
-		if (y >= 550) {
+		if (y >= 300) {
 			$('.navbar').addClass('resized');
 			$(".navbarName").fadeIn();
 		} else {
@@ -28,6 +28,7 @@ var myPlayer;
 			width =1000;
 			height = 570;
 		}
+
 		myPlayer.width(width).height(height);
 
 	}

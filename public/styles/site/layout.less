@@ -4,19 +4,25 @@
 	width: 100%;
 	z-index: 15;
 }
-
+.navbar{
+	border: none;
+}
 .navbar-default{
 	padding-left: 20px;
 	padding-right: 20px;
 
 }
 
+.navbar-toggle {
+    margin-right: -8px;
+    margin-top: 7px;
+}
 #body{
-
+	background-color: #212b44;
 }
 
 #body .row{
-	//background-color: #ff5252 !important;
+	//background-color: #a21525 !important;
 	margin-top: 60vh;
 }
 
@@ -59,6 +65,7 @@
 
 .positionName h1{
     color: #0b0b0b !important;
+    letter-spacing: -5px;
     font-size: 15rem;
     line-height: 10.5rem;
 	-webkit-transition: all 0.5s ease;
@@ -70,14 +77,16 @@
 
 .positionName h3{
 	font-family: 'Slabo 27px', serif;
-	font-size: 5rem;
-	color: #ff5252;
+	font-size: 4.5rem;
+	color: #a21525;
 	margin-top: 5rem;
 	-webkit-transition: all 0.5s ease;
    -moz-transition: all 0.5s ease;
    -o-transition: all 0.5s ease;
    transition: all 0.5s ease;
 }
+
+
 
 
 @media (max-width: 1230px) {
@@ -97,7 +106,7 @@
 	.positionName h3{
 		font-family: 'Slabo 27px', serif;
 		font-size: 3rem;
-		color: #ff5252;
+		color: #a21525;
 		margin-top: 2rem;
 		-webkit-transition: all 0.5s ease;
 		-moz-transition: all 0.5s ease;
@@ -130,6 +139,35 @@
   }
 }
 
+@media (max-width: 700px) {
+		.positionName h1{
+		color: #0b0b0b !important;
+		font-size: 7rem !important;
+		line-height: 5.5rem !important;
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+	.leftCol{
+		padding-left: 40px !important;
+		padding-right: 40px !important;
+	}
+	.videoOverlay{
+		background: linear-gradient(#fff,rgba(255, 255, 255, 0.0))
+	}
+	.quote{
+		font-size: 2rem !important;
+	}
+
+	.menuHolder i{
+		margin-right: 15px;
+		margin-top: 5px;
+		color: #fff !important;
+		font-size: 2rem !important;
+	}
+}
+
 .hugeName{
     color: #fff;
     fill: #fff;
@@ -148,6 +186,8 @@
 }
 
 .leftCol{
+    box-shadow: 8px 0px 14px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 	background-color: #fff;
 	height: 100%;
 	padding-top: 180px;
@@ -156,21 +196,22 @@
 }
 
 .rightCol{
-	background-color: #ff5252;
+	background-color: #e3a375 ;
 	height: 100%;
 	padding-top: 0px;
 	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .rightCol h1{
 	margin-top: 0px;
-	background-color: #600000;
+	background-color: #64352b;
 	color: #fff;
 	text-transform: uppercase;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	padding-left: 20px;
-	text-shadow: 2px 2px #ff0000;
+	text-shadow: 2px 2px #dfa172;
 }
 
 .rightCol p{
@@ -195,7 +236,7 @@
 .quote {
 	float: right;
 	font-size: 3.5rem;
-	color: #ff5252;
+	color: #a21525;
 	text-align: right;
 	width: 30vw;
 	padding-top: 40px;
@@ -209,9 +250,9 @@
 	display: none;
 	position: absolute;
 	top: 5%;
-    left: 95%;
-	width: 50px;
-	height: 50px;
+    left: 87%;
+	width: 30px;
+	height: 30px;
 	color: hsla(0,0%,100%,.3);
 	z-index: 10;
 	cursor: pointer;
@@ -285,18 +326,26 @@ svg line{
 }  
 
 .resized{
-	height: 80px !important;
-	color: #0b0b0b;
+	height: 70px !important;
+	color: #0b0b0b !important;
 	background-color: #fff;
 	padding-top: 10px;
+	box-shadow: 1px 1px 1px #888888;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
+.socialIcons{
+	margin-top: 3px;
+}
+
 .resized .socialIcons i{
-	font-size: 5rem;
+	margin-top: 0px !important;
+	color: #0b0b0b !important;
+
+	font-size: 3.5rem !important;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
