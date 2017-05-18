@@ -26,8 +26,9 @@ html
 		block css
 
 		block head
-
-	body
+	- var bodyClass = '';
+	block vars
+	body(class=bodyClass)
 		#header
 			.menuHolder
 				div(role="navigation").navbar.navbar-default

@@ -1,8 +1,58 @@
+body.index{
+	background-color: #fff;
+}
+body.blog{
+	background-color: #212b44;
+}
+
+.index #body{
+	background-color: #fff;
+}
+
+.blog #body{
+	background-color: #212b44;
+}
+
 #header {
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 15;
+}
+
+.intro{
+	top: 80px;
+	position: absolute;
+	z-index: 1;
+	color: #fff;
+	font-family: 'Teko', sans-serif;
+	padding-right: 50vw;
+	padding-left: 5vw;
+}
+
+.intro h1{
+	font-size: 12rem;
+	text-transform: uppercase;
+    letter-spacing: -5px;
+    line-height: 10.5rem;
+	-webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+.intro h3{
+	font-size: 2rem;
+}
+
+.intro p{
+	font-family: 'Slabo 27px', serif;
+	color: rgba(255, 255, 255, 0.7);
+	line-height: 14px;
+}
+
+.intro a {
+	color: #fff;
 }
 .navbar{
 	border: none;
@@ -17,13 +67,15 @@
     margin-right: -8px;
     margin-top: 7px;
 }
-#body{
-	background-color: #212b44;
-}
 
-#body .row{
+#body .row.article{
 	//background-color: #a21525 !important;
 	margin-top: 60vh;
+}
+
+#body .row.blog{
+	position: relative;
+	margin-top: -30vh;
 }
 
 .row{
@@ -86,10 +138,26 @@
    transition: all 0.5s ease;
 }
 
+hr{
+	margin: 5px;
+}
 
-
+@media (max-width: 1020px) {
+	.blog .playButton{
+	    top: 85px !important;
+   		left: 85% !important;
+    	-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;   		
+	}
+	.container.intro{
+		padding-right: 5vw !important;
+	}
+}
 
 @media (max-width: 1230px) {
+
 	.namePlate{
 		font-size: 3rem !important;
 	}
@@ -114,6 +182,22 @@
 		transition: all 0.5s ease;
 	}
 
+	.intro h1{
+		font-size: 10rem !important;
+		line-height: 7rem !important;
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+
+	.intro h3{
+		font-size: 2rem !important;
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
 	.articleCopy{
     	margin-top: 0;
     	-webkit-transition: all 0.5s ease;
@@ -124,9 +208,10 @@
 }
 
 @media (min-width: 1200px){
-.container {
-    width: 85%;
-}
+	.container {
+	    width: 85%;
+	}
+
 }
 @media (min-width: 960px) {
 	.leftCol{
@@ -140,10 +225,26 @@
 }
 
 @media (max-width: 700px) {
-		.positionName h1{
+	.positionName h1{
 		color: #0b0b0b !important;
 		font-size: 7rem !important;
 		line-height: 5.5rem !important;
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+	.intro h1{
+		font-size: 7rem !important;
+		line-height: 5.5rem !important;
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+
+	.intro h3{
+		font-size: 1rem !important;
 		-webkit-transition: all 0.5s ease;
 		-moz-transition: all 0.5s ease;
 		-o-transition: all 0.5s ease;
@@ -166,6 +267,15 @@
 		color: #fff !important;
 		font-size: 2rem !important;
 	}
+
+	.blog .playButton{
+   		width: 60px !important;
+    	height: 60px !important;
+    	-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;   	
+	}
 }
 
 .hugeName{
@@ -174,7 +284,7 @@
     position: absolute;
     z-index: 5;
     top:-14rem;
-    left: 15px;
+    left: 0px;
 }
 
 .positionName{
@@ -311,8 +421,16 @@
 .videoContainer{
 	width: 100%;
 	margin: 0px auto;
+	overflow: hidden;
+}
+
+.videoContainer.home{
 	position: fixed;
 	top: 0;
+}
+
+.video-js{
+	opacity: 0.7;
 }
 
 video {
@@ -339,6 +457,11 @@ svg line{
 
 .socialIcons{
 	margin-top: 3px;
+	font-size: 20px;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .resized .socialIcons i{
@@ -379,4 +502,57 @@ svg line{
 .navbarSignup{
 	
 	margin-top: 15px;
+}
+
+.postList{
+	background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.0) 60%);
+	padding-top: 20px;
+}
+
+.postCard{
+	background-color: #000;
+	position: relative;
+	height: 280px;
+	overflow: hidden;
+	color: #fff;
+	padding: 20px;	
+	margin-bottom: 15px;
+}
+
+
+
+.postCard h2{
+	font-family: 'Teko', sans-serif;	
+	font-size: 4rem;
+	text-transform: uppercase;
+	line-height: 40px;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+.postCard a{
+	color: #fff;
+}
+.post .col-md-4{
+	padding-left:5px;
+	padding-right:5px;
+	padding-top: 0px;
+}
+
+
+.postCard {
+    position: relative;
+    overflow: hidden;
+}
+.postCard h2, .postCard a {
+    position: relative;
+    z-index: 2;
+} 
+.postCard img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
 }

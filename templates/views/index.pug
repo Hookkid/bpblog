@@ -1,7 +1,10 @@
 extends ../layouts/default
 
+block vars
+	- bodyClass = 'index'
+
 block content
-	.videoContainer
+	.videoContainer.home
 		video.video-js.vjs-default-skin(id="heroVideo",controls,preload="none",autoplay="true",muted)
 			source(src="http://www.qualidadenutricao.com.br/TRAVEL-LOVE.mp4",poster="/images/videoPoster.jpg",type='video/mp4')
 	.playButton(id="playButton")
@@ -12,7 +15,6 @@ block content
 		svg.svgButton(viewBox="0 0 40 40")
 			line(x1="0",y1="0",x2="40",y2="40")
 			line(x1="0",y1="40",x2="40",y2="0")
-	.videoOverlay
 
 	.row.article
 		.container

@@ -1,4 +1,17 @@
+
 $(document).ready(function (){
+	var closed=true;
+	$(".navbar-toggle").click(function (){
+		if(!closed){
+			$(".navbar-default").css("background-color", "rgba(255,255,255,0.5)");
+			closed = true;
+		}
+		else{
+			$(".navbar-default").css("background-color", "rgba(255,255,255,1)");
+			closed = false;
+		}
+	});
+
 	$(window).scroll(function (event) {
 		var y = $(this).scrollTop(); //set position from top when to change style in pixels
 		if (y >= 300) {
@@ -55,13 +68,33 @@ _V_("heroVideo").ready(function(){
 	  	}, 2000, function() {
 	  	  // Animation complete.
 		});
+
+		$(".container.intro").animate({
+	    top: "-=500",
+	    opacity: 0
+	  	}, 1500, function() {
+	  	  // Animation complete.
+		});
 		
+		$(".video-js").animate({
+	    opacity: 1
+	  	}, 2000, function() {
+	  	  // Animation complete.
+		});
+
 		$(".vjs-controls").fadeIn();
 
 		$(".row.article").animate({
 	    marginTop: "+=500",
 	    opacity: 0
 	  	}, 2000, function() {
+	  	  // Animation complete.
+		});
+
+		$(".row.blog").animate({
+	    marginTop: "+=100",
+	    opacity: 0
+	  	}, 1700, function() {
 	  	  // Animation complete.
 		});
 		
@@ -86,9 +119,29 @@ _V_("heroVideo").ready(function(){
 	  	  // Animation complete.
 		});
 		
+		$(".video-js").animate({
+	    opacity: 0.7
+	  	}, 500, function() {
+	  	  // Animation complete.
+		});
+
+	$(".container.intro").animate({
+    top: "+=500",
+    opacity: 1
+  	}, 500, function() {
+  	  // Animation complete.
+	});
+
 
 		$(".row.article").animate({
 	    marginTop: "-=500",
+	    opacity: 1
+	  	}, 500, function() {
+	  	  // Animation complete.
+		});
+
+		$(".row.blog").animate({
+	    marginTop: "-=100",
 	    opacity: 1
 	  	}, 500, function() {
 	  	  // Animation complete.

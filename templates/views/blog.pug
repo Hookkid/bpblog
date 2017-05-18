@@ -1,34 +1,44 @@
 extends ../layouts/default
 
+block vars
+	- bodyClass = 'blog'
+
 mixin post(post)
-	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h2: a(href='/blog/post/' + post.slug)= post.title
-		p.lead.text-muted Posted 
-			if post.publishedDate
-				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
-			if post.categories && post.categories.length
-				| in 
-				each cat, i in post.categories
-					a(href='/blog/' + cat.key)= cat.name
-					if i < post.categories.length - 1
-						| , 
-					else
-						|  
-			if post.author
-				| by #{post.author.name.first}
-		if post.image.exists
-			img(src=post._.image.fit(160,160)).img.pull-right
-		p!= post.content.brief
-		if post.content.extended
-			p.read-more: a(href='/blog/post/' + post.slug) Read more...
+		.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+			.col-md-4.col-sm-6.col-xs-12
+				.postCard
+					h2: a(href='/blog/post/' + post.slug)= post.title
+					img(src=post._.image.fit(1920,980))
+					//p!= post.content.brief
+					if post.content.extended
+						a.btn.btn-primary(href='/blog/post/' + post.slug) Read more...
 
 block intro
-	.container
-		h1= data.category ? data.category.name : 'Blog'
+	.container.intro
+		h3= data.category ? data.category.name : 'My latest post'
+		h1 A trip too far
+		hr
+		p This is Travel Footage from eight countries.
+		p Chile, Bolivia, Peru, Uruguay, Argentina, Vietnam, Cambodia and Thailand.
+		p Credit: 
+			a(href='https://vimeo.com/christiangrewe') Chris Grewe 
 
 block content
-	.container: .row
-		.col-sm-8.col-md-9
+	.videoContainer
+		video.video-js.vjs-default-skin(id="heroVideo",controls,preload="none",autoplay="true",muted)
+			source(src="http://www.qualidadenutricao.com.br/TRAVEL-LOVE.mp4",poster="/images/videoPoster.jpg",type='video/mp4')
+	.playButton(id="playButton")
+		.buttonHolder
+			svg.svgButton(version="1.1",id="Layer_1",xmlns="http://www.w3.org/2000/svg",xmlns:xlink="http://www.w3.org/1999/xlink",x="0px",y="0px",viewBox="0 0 35.4 35.4",enable-background="new 0 0 35.4 35.4",xml:space="preserve")
+				path(d="M0,0l35.4,18.7L0,35.4V0z")
+	.closeButton(id="closeButton")
+		svg.svgButton(viewBox="0 0 40 40")
+			line(x1="0",y1="0",x2="40",y2="40")
+			line(x1="0",y1="40",x2="40",y2="0")
+
+
+	.row.blog
+		.col-sm-12.postList
 			if filters.category && !data.category
 				h3.text-muted Invalid Category.
 			else
@@ -42,10 +52,11 @@ block content
 							strong #{data.posts.total}
 							|  posts.
 					else
-						h4.text-weight-normal Showing #{utils.plural(data.posts.results.length, '* post')}.
+						//h4.text-weight-normal Showing #{utils.plural(data.posts.results.length, '* post')}.
 					.blog
-						each post in data.posts.results
-							+post(post)
+						.row
+							each post in data.posts.results
+								+post(post)
 					
 					if data.posts.totalPages > 1
 						ul.pagination
@@ -67,9 +78,10 @@ block content
 						h3.text-muted There are no posts yet.
 		
 		if data.categories.length
-			.col-sm-4.col-md-3
-				h2 Categories
-				.list-group(style='margin-top: 70px;')
-					a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
-					each cat in data.categories
-						a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+			.row
+				.col-sm-12
+					h2 Categories
+					.list-group(style='margin-top: 70px;')
+						a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
+						each cat in data.categories
+							a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
